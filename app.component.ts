@@ -6,28 +6,43 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent implements OnInit {
+  Feature = {
+
+    'name': null,
+    'Date': null,
+    'Description': null,
+    'TargetDate': null,
+    'Client': null,
+    'Product': null
+  }
   form: any;
-  Client: string[];
-  Product: string[];
-  Description: string;
-  TargetDate: string;
-  submitted: boolean = false
-  constructor(){}
-  ngOnInit(){
 
-  
- this.Client = ['ClientA', 'ClientB',
-            'ClientC', 'ClientD'];
+  submitted: boolean = false;
+  Client = ['ClientA', 'ClientB',
+    'ClientC', 'ClientD'];
 
- this.Product = ['policies','Billing'];
-  
-}
+  Product = ['policies', 'Billing'];
 
+  constructor() { }
+  ngOnInit() {
+    document.getElementById('resetform').click();
+  }
 
+  onSubmit() {
 
- 
-  onSubmit(form: any)  {
     this.submitted = true;
-    this.form = form;}
- 
+
+
+  }
+
+  onEdit() {
+   
+    
+    this.submitted= false;
+    document.getElementById('resetform').click();
+  
+  }
+
+
+
 }
